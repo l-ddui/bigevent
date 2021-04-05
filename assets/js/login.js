@@ -1,4 +1,6 @@
 $(function () {
+    let layer = layui.layer
+
     $('#toReg').click(function () {
         $('.loginBox').hide()
         $('.regBox').show()
@@ -37,9 +39,9 @@ $(function () {
             data: { username, password },
             success: (res) => {
                 if (res.status != 0) {
-                    return alert(res.message)
+                    return layer.msg(res.message)
                 } else {
-                    alert(res.message)
+                    layer.msg(res.message)
                     localStorage.setItem("token", res.token)
                     location.href = '/index.html'
                 }
@@ -61,9 +63,9 @@ $(function () {
             data: { username, password },
             success: (res) => {
                 if (res.status != 0) {
-                    return alert(res.message)
+                    return layer.msg(res.message)
                 } else {
-                    alert(res.message)
+                    layer.msg(res.message)
                     $('.regBox').hide()
                     $('.loginBox').show()
                 }

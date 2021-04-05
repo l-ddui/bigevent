@@ -9,17 +9,7 @@ $(function () {
             location.href = '/login.html'
             layer.close(index);
         });
-
-
-
-
-
     })
-
-
-
-
-
 
 })
 // 获取用户信息
@@ -32,7 +22,7 @@ function getUserInfo() {
         // },
         success: (res) => {
             if (res.status != 0) {
-                return alert(res.message)
+                return layui.layer.msg(res.message)
             }
             // console.log(res);
             renderAvatar(res.data)
